@@ -1,69 +1,55 @@
 table{
-    display: block;
-    width: 100%;
     border-spacing: 0 0.5em;
-    max-height: 50vmax;
-    overflow-y: auto;
-    scroll-behavior: smooth;
+    width: 100%;
+    table-layout:fixed;
 }
 tr th{
     color: ghostwhite;
-    background-color: cadetblue;
+    background-color: rgb(158, 158, 158);
 }
 tr td{
-    background-color: #b6d7d7;
-}
-th, td{
-    padding: 1em;
-    text-align: left;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow: ellipsis;
+    background-color: #d5d6d6;
 }
 tr td:first-child, tr th:first-child{
     border-top-left-radius: 0.5em;
     border-bottom-left-radius: 0.5em;
 }
-
 tr td:last-child, tr th:last-child{
     border-top-right-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
 }
-.category-icon{
-    width: 5%;
-    /*min-width: 1.5em;*/
-    min-width: 2em;
-}
-.name{
-    width: 20%;
-    /*min-width: 20%;*/
-    /*max-width: 20%;*/
-}
-.created, .category1, .dates{
-    width: 15%;
+.category-icon, .row-icon{
+    fill: #424242;
 }
 .header-icon{
-    width: 4%;
     fill: ghostwhite;
-    min-width: 1.5em;
-    min-height: 1.5em;
 }
-.header-icon svg {
-    width: 1.5em;
-    height: 1.5em;
-}
-.category-icon svg {
-    width: 2em;
+td, th{
+    padding: 1em;
+    text-align: left;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
     height: 2em;
 }
-.category2 {
-    width: 50%;
+/*notes table*/
+.created, .category1{
+    width: 8em;
 }
+.category-icon, .active-icon{
+    width: 4em;
+}
+/*stats table*/
 .active, .archived{
     width: 20%;
 }
+svg{
+    max-height: 2em;
+    max-width: 2em;
+}
+
 @media screen and (max-width: 800px) {
     .created, .dates{
-        display: none;
+        width: 0;
     }
 }

@@ -1,33 +1,17 @@
-function loadDataIntoTables(){
+export function makeRandomID (length) {
+    let result = '',
+        chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_';
 
-}
-function switchTables(){
+    for (let i = 0; i < length; i++)
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
 
-}
-function loadLocalData(){
-
-}
-function openForm(){
-
-}
-function refreshTables(){
-
-}
-function loadIconsIntoHeader(archiveIcon, deleteIcon){
-    Array.from(document.getElementsByClassName('header-icon')).forEach(col => {
-        if (col.classList.contains('archive'))
-            col.innerHTML = archiveIcon;
-        if (col.classList.contains('delete'))
-            col.innerHTML = deleteIcon;
-        // Array.from(col.getElementsByTagName('path')).forEach( path => path.classList.add('header-icon'));
-    });
+    return result;
 }
 
-export {
-    loadDataIntoTables,
-    loadIconsIntoHeader,
-    switchTables,
-    refreshTables,
-    openForm,
-    loadLocalData
+export function getDatesFromText(text){
+    let results = text.match(/[0-9]{1,2}([\-\/ \.])[0-9]{1,2}([\-\/ \.])((19)|(20))[0-9]{2}/g);
+
+    if (results && results.length)
+        return results;
+    return [];
 }
